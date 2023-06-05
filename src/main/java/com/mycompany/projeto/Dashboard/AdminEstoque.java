@@ -95,7 +95,6 @@ public class AdminEstoque extends javax.swing.JPanel {
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconLupa.png")); // NOI18N
 
         txtPesquisa.setBackground(new java.awt.Color(235, 235, 235));
-        txtPesquisa.setText(" ");
         txtPesquisa.setBorder(null);
         txtPesquisa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
