@@ -1,5 +1,4 @@
 package com.mycompany.projeto.PanelCustom;
-
 /**
  *
  * @author Richard

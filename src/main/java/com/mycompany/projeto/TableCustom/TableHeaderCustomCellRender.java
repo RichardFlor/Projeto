@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableCellRenderer;
  */
 public class TableHeaderCustomCellRender extends DefaultTableCellRenderer {
 
+    
     private final JTable table;
 
     public TableHeaderCustomCellRender(JTable table) {

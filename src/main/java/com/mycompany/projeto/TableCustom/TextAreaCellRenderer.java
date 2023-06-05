@@ -15,6 +15,7 @@ import javax.swing.table.TableCellRenderer;
  */
 public class TextAreaCellRenderer extends JTextArea implements TableCellRenderer {
 
+    
     private final List<List<Integer>> rowAndCellHeights = new ArrayList<>();
     private final HoverIndex hoverRow;
 

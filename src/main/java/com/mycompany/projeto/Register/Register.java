@@ -1,6 +1,5 @@
 package com.mycompany.projeto.Register;
 
-
 import java.sql.*;
 import javax.swing.*;
 import com.mycompany.projeto.Login.Login;

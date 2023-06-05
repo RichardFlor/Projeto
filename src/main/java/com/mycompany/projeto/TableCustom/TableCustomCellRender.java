@@ -11,6 +11,7 @@ import javax.swing.table.DefaultTableCellRenderer;
  */
 public class TableCustomCellRender extends DefaultTableCellRenderer {
 
+    
     private final HoverIndex hoverRow;
 
     public TableCustomCellRender(HoverIndex hoverRow) {
