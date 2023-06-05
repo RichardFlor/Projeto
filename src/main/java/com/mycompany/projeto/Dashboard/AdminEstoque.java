@@ -1,6 +1,5 @@
 package com.mycompany.projeto.Dashboard;
 
-
 import com.mycompany.projeto.TableCustom.TableCustom;
 import java.awt.BorderLayout;
 import java.sql.Connection;
@@ -9,6 +8,8 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import com.mycompany.projeto.JDBC.MySQL;
+
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -40,10 +41,14 @@ public class AdminEstoque extends javax.swing.JPanel {
         lblCadastrar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableEstoque = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
+        txtPesquisa = new javax.swing.JTextField();
+        lblClose2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(880, 530));
 
         jPanel1.setBackground(new java.awt.Color(235, 235, 235));
+        jPanel1.setPreferredSize(new java.awt.Dimension(880, 590));
 
         panelRadius1.setBackground(new java.awt.Color(255, 255, 255));
         panelRadius1.setPreferredSize(new java.awt.Dimension(839, 487));
@@ -67,11 +72,11 @@ public class AdminEstoque extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Alimento", "Validade", "Editar/Excluir"
+                "idItem", "Alimento", "Validade", "Editar/Excluir"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -82,33 +87,73 @@ public class AdminEstoque extends javax.swing.JPanel {
         tableEstoque.setRowHeight(40);
         jScrollPane1.setViewportView(tableEstoque);
         if (tableEstoque.getColumnModel().getColumnCount() > 0) {
-            tableEstoque.getColumnModel().getColumn(0).setPreferredWidth(80);
-            tableEstoque.getColumnModel().getColumn(1).setPreferredWidth(30);
-            tableEstoque.getColumnModel().getColumn(2).setPreferredWidth(5);
+            tableEstoque.getColumnModel().getColumn(1).setPreferredWidth(80);
+            tableEstoque.getColumnModel().getColumn(2).setPreferredWidth(30);
+            tableEstoque.getColumnModel().getColumn(3).setPreferredWidth(5);
         }
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconLupa.png")); // NOI18N
+
+        txtPesquisa.setBackground(new java.awt.Color(235, 235, 235));
+        txtPesquisa.setText(" ");
+        txtPesquisa.setBorder(null);
+        txtPesquisa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPesquisaKeyReleased(evt);
+            }
+        });
+
+        lblClose2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblClose2.setForeground(new java.awt.Color(255, 255, 255));
+        lblClose2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblClose2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconSair.png")); // NOI18N
+        lblClose2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblClose2.setName(""); // NOI18N
+        lblClose2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblClose2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRadius1Layout = new javax.swing.GroupLayout(panelRadius1);
         panelRadius1.setLayout(panelRadius1Layout);
         panelRadius1Layout.setHorizontalGroup(
             panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRadius1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addGroup(panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRadius1Layout.createSequentialGroup()
-                        .addGap(383, 383, 383)
-                        .addComponent(lblCadastrar))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(19, Short.MAX_VALUE))
                     .addGroup(panelRadius1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addComponent(jLabel7)
+                        .addGap(6, 6, 6)
+                        .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblClose2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))))
+            .addGroup(panelRadius1Layout.createSequentialGroup()
+                .addGap(380, 380, 380)
+                .addComponent(lblCadastrar)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelRadius1Layout.setVerticalGroup(
             panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRadius1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRadius1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelRadius1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lblClose2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(lblCadastrar)
-                .addGap(14, 14, 14))
+                .addGap(29, 29, 29))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -116,16 +161,16 @@ public class AdminEstoque extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(18, 18, 18)
                 .addComponent(panelRadius1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(panelRadius1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addComponent(panelRadius1, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -146,6 +191,16 @@ public class AdminEstoque extends javax.swing.JPanel {
 
     }//GEN-LAST:event_lblCadastrarMouseClicked
 
+    private void lblClose2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblClose2MouseClicked
+        //Botao fechar
+        System.exit(0);
+    }//GEN-LAST:event_lblClose2MouseClicked
+
+    private void txtPesquisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisaKeyReleased
+        // TODO add your handling code here:
+        pesquisarItem();
+    }//GEN-LAST:event_txtPesquisaKeyReleased
+
     //Método para listar os dados do banco na tabela
     public void carregarTabela() {
         connection = MySQL.conector();
@@ -165,6 +220,7 @@ public class AdminEstoque extends javax.swing.JPanel {
             while (rs.next()) {
                 modelo.addRow(new Object[]{
                     //Começa no dois por que nao quero trazer o campo idItem do mySql
+                    rs.getString(1),
                     rs.getString(2),
                     rs.getString(3)
                 // rs.getString(3)
@@ -178,11 +234,31 @@ public class AdminEstoque extends javax.swing.JPanel {
 
     }
 
+    //método para pesquisa avançada no banco com filtro
+    private void pesquisarItem() {
+        String sql = "select * from tblItem where nomeItem like ?";
+        try {
+            pst = connection.prepareStatement(sql);
+            //Passando o conteudo da caixa de pesquisa para o ?
+            //atenção ao "%" - continuação da String sql
+            pst.setString(1, txtPesquisa.getText() + "%");
+            rs = pst.executeQuery();
+
+            //A linha abaixo usa a biblioteca rs2xml.jar para preencher a tabela
+            tableEstoque.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCadastrar;
+    private javax.swing.JLabel lblClose2;
     private com.mycompany.projeto.PanelCustom.PanelRadius panelRadius1;
     private javax.swing.JTable tableEstoque;
+    private javax.swing.JTextField txtPesquisa;
     // End of variables declaration//GEN-END:variables
 }

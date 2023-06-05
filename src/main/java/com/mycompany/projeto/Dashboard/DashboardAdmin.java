@@ -14,7 +14,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
 
         //Codigo para mostrar a tela de estoque para o admin
         AdminEstoque estoque = new AdminEstoque();
-        estoque.setSize(880, 530);
+        estoque.setSize(880, 590);
         estoque.setLocation(0, 0);
 
         content.removeAll();
@@ -39,11 +39,6 @@ public class DashboardAdmin extends javax.swing.JFrame {
         btnDonatario = new com.mycompany.projeto.ButtonCustom.ButtonRadius();
         btnEstoque = new com.mycompany.projeto.ButtonCustom.ButtonRadius();
         btnDoadores = new com.mycompany.projeto.ButtonCustom.ButtonRadius();
-        lblClose2 = new javax.swing.JLabel();
-        lblClose = new javax.swing.JLabel();
-        txtPesquisa = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -146,43 +141,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 590));
 
-        lblClose2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblClose2.setForeground(new java.awt.Color(255, 255, 255));
-        lblClose2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconSair.png")); // NOI18N
-        lblClose2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblClose2.setName(""); // NOI18N
-        lblClose2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblClose2MouseClicked(evt);
-            }
-        });
-        getContentPane().add(lblClose2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, 40, 29));
-
-        lblClose.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
-        lblClose.setForeground(new java.awt.Color(25, 118, 211));
-        lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose.setText("Seeds");
-        lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblClose.setName(""); // NOI18N
-        lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblCloseMouseClicked(evt);
-            }
-        });
-        getContentPane().add(lblClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, 90, 29));
-
-        txtPesquisa.setBackground(new java.awt.Color(235, 235, 235));
-        txtPesquisa.setText(" ");
-        txtPesquisa.setBorder(null);
-        getContentPane().add(txtPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 270, 30));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconLupa.png")); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, -1, 30));
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setFocusable(false);
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 880, 60));
+        content.setPreferredSize(new java.awt.Dimension(880, 590));
 
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
@@ -192,10 +151,10 @@ public class DashboardAdmin extends javax.swing.JFrame {
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
         );
 
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 880, 530));
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 880, 590));
 
         setSize(new java.awt.Dimension(1119, 589));
         setLocationRelativeTo(null);
@@ -214,21 +173,10 @@ public class DashboardAdmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formWindowOpened
 
-    private void lblClose2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblClose2MouseClicked
-        //Botao fechar
-        System.exit(0);
-    }//GEN-LAST:event_lblClose2MouseClicked
-
-    private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
-        Login login = new Login();
-        this.dispose();
-        login.setVisible(true);
-    }//GEN-LAST:event_lblCloseMouseClicked
-
     private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
         //Codigo para mostrar a tela de estoque para o admin
         AdminEstoque estoque = new AdminEstoque();
-        estoque.setSize(880, 530);
+        estoque.setSize(880, 590);
         estoque.setLocation(0, 0);
 
         content.removeAll();
@@ -240,7 +188,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
     private void btnDoadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoadoresActionPerformed
         //Codigo para mostrar a tela de doador para o admin
         AdminDoador doador = new AdminDoador();
-        doador.setSize(880, 530);
+        doador.setSize(880, 590);
         doador.setLocation(0, 0);
 
         content.removeAll();
@@ -252,7 +200,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
     private void btnDonatarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDonatarioActionPerformed
         //Codigo para mostrar a tela de donatario para o admin
         AdminDonatario donatario = new AdminDonatario();
-        donatario.setSize(880, 530);
+        donatario.setSize(880, 590);
         donatario.setLocation(0, 0);
 
         content.removeAll();
@@ -434,12 +382,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel lblClose;
-    private javax.swing.JLabel lblClose2;
     public static javax.swing.JLabel lblTypeUser;
-    private javax.swing.JTextField txtPesquisa;
     // End of variables declaration//GEN-END:variables
 }
