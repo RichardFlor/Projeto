@@ -38,8 +38,8 @@
 //
 //CREATE TABLE tblItem(
 //	idItem int primary key auto_increment,
-//    nomeItem varchar(255),
-//    validade date
+//    nomeItem varchar(255) not null,
+//    validade varchar(255) not null
 //);
 //
 //CREATE TABLE tblItemUsuario(
@@ -80,40 +80,80 @@
 //
 ///* Inserindo dados com email para logar */
 //insert into tblUsuario (Nome,Email,Senha,Perfil) values ('Richard','admin@admin','123','admin');
-//insert into tblUsuario (Nome,Email,Senha,Perfil) values ('Richard','doador@doador','123','doador');
-//insert into tblUsuario (Nome,Email,Senha,Perfil) values ('Gustavo','donatario@donatario','123','donatario');
+//insert into tblUsuario (Nome,Email,Senha,Perfil,Telefone) values ('Richard','doador@doador','123','doador','999999999');
+//insert into tblUsuario (Nome,Email,Senha,cpf,Perfil) values ('Gustavo','donatario@donatario','123','00000000000','donatario');
 //
 //-- Insert para doador
-//insert into tblUsuario (Nome,Senha,Telefone,Perfil) values ('Matheus','123','999999999','doador');
-//insert into tblUsuario (Nome,Senha,Telefone,Perfil) values ('Pedro','123','999999999','doador');
-//insert into tblUsuario (Nome,Senha,Telefone,Perfil) values ('Richard','123','999999999','doador');
-//insert into tblUsuario (Nome,Senha,Telefone,Perfil) values ('Allan','123','999999999','doador');
-//insert into tblUsuario (Nome,Senha,Telefone,Perfil) values ('Gustavo','123','999999999','doador');
-//insert into tblUsuario (Nome,Senha,Telefone,Perfil) values ('Michael','123','999999999','doador');
-//insert into tblUsuario (Nome,Senha,Telefone,Perfil) values ('Tanjiro','123','999999999','doador');
-//insert into tblUsuario (Nome,Senha,Telefone,Perfil) values ('Asta','123','999999999','doador');
-//insert into tblUsuario (Nome,Senha,Telefone,Perfil) values ('Nezuko','123','999999999','doador');
+//INSERT INTO tblUsuario (Nome, Senha, Telefone, Perfil)
+//VALUES
+//  ('Matheus', '123', '111111111', 'doador'),
+//  ('Lucas', '123', '222222222', 'doador'),
+//  ('Pedro', '123', '333333333', 'doador'),
+//  ('Gabriel', '123', '444444444', 'doador'),
+//  ('Mariana', '123', '555555555', 'doador'),
+//  ('Julia', '123', '666666666', 'doador'),
+//  ('Rafael', '123', '777777777', 'doador'),
+//  ('Larissa', '123', '888888888', 'doador'),
+//  ('Gustavo', '123', '999999999', 'doador'),
+//  ('Isabela', '123', '101010101', 'doador'),
+//  ('Daniel', '123', '121212121', 'doador'),
+//  ('Manuela', '123', '131313131', 'doador'),
+//  ('Ricardo', '123', '141414141', 'doador'),
+//  ('Fernanda', '123', '151515151', 'doador'),
+//  ('Caio', '123', '161616161', 'doador'),
+//  ('Carolina', '123', '171717171', 'doador'),
+//  ('Vitor', '123', '181818181', 'doador'),
+//  ('Amanda', '123', '191919191', 'doador'),
+//  ('Marcelo', '123', '202020202', 'doador'),
+//  ('Renata', '123', '212121212', 'doador');
 //
 //
 //-- Insert para donatario
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Gustavo','11111111111','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Richard','22222222222','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Matheus','33333333333','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Mathias','44444444444','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Tanjiro','55555555555','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Asta','66666666666','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Yuno','77777777777','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Goku','88888888888','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Naruto','99999999999','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Gustavo','11111111111','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Richard','22222222222','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Matheus','33333333333','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Mathias','44444444444','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Tanjiro','55555555555','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Asta','66666666666','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Yuno','77777777777','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Goku','88888888888','donatario');
-//insert into tblUsuario (Nome,cpf,Perfil) values ('Naruto','99999999999','donatario');
+//INSERT INTO tblUsuario (Nome, cpf, Perfil)
+//VALUES
+//  ('Gustavo', '11111111111', 'donatario'),
+//  ('Mariana', '22222222222', 'donatario'),
+//  ('Lucas', '33333333333', 'donatario'),
+//  ('Isabela', '44444444444', 'donatario'),
+//  ('Pedro', '55555555555', 'donatario'),
+//  ('Ana', '66666666666', 'donatario'),
+//  ('Rafaela', '77777777777', 'donatario'),
+//  ('Leonardo', '88888888888', 'donatario'),
+//  ('Carolina', '99999999999', 'donatario'),
+//  ('Matheus', '10101010101', 'donatario'),
+//  ('Amanda', '12121212121', 'donatario'),
+//  ('Gabriel', '13131313131', 'donatario'),
+//  ('Larissa', '14141414141', 'donatario'),
+//  ('Bruno', '15151515151', 'donatario'),
+//  ('Juliana', '16161616161', 'donatario'),
+//  ('Ricardo', '17171717171', 'donatario'),
+//  ('Natália', '18181818181', 'donatario'),
+//  ('Marcelo', '19191919191', 'donatario'),
+//  ('Letícia', '20202020202', 'donatario'),
+//  ('Vitor', '21212121212', 'donatario');
+//
+//INSERT INTO tblItem (nomeItem, validade)
+//VALUES
+//  ('Arroz', '01/01/2023'),
+//  ('Feijão', '15/03/2023'),
+//  ('Macarrão', '22/06/2023'),
+//  ('Azeite', '10/08/2023'),
+//  ('Leite em pó', '05/11/2023'),
+//  ('Café em grãos', '12/02/2024'),
+//  ('Açúcar', '28/04/2024'),
+//  ('Sal', '19/07/2024'),
+//  ('Biscoitos', '03/10/2024'),
+//  ('Enlatados', '20/12/2024'),
+//  ('Massa de tomate', '07/03/2025'),
+//  ('Farinha de trigo', '18/05/2025'),
+//  ('Óleo vegetal', '09/08/2025'),
+//  ('Cereais', '26/10/2025'),
+//  ('Geleia', '12/01/2023'),
+//  ('Café solúvel', '03/04/2023'),
+//  ('Barras de cereal', '20/07/2023'),
+//  ('Leite condensado', '08/09/2023'),
+//  ('Leite em caixa', '25/11/2023'),
+//  ('Chá', '12/02/2024');
 //
 //
 //
@@ -122,11 +162,6 @@
 //insert into tblCesta(qntItens) values (2);
 //insert into tblCesta(qntItens) values (3);
 //insert into tblCesta(qntItens) values (4);
-//
-//insert into tblItem(nomeItem,validade) values("Arroz",'2023-10-31');
-//insert into tblItem(nomeItem,validade) values("Feijao",'2023-08-17');
-//insert into tblItem(nomeItem,validade) values("Macarrão",'2023-05-15');
-//insert into tblItem(nomeItem,validade) values("Bolacha",'2023-02-19');
 //
 //insert into tblItemCesta(idCesta,idItem) values(1,1);
 //insert into tblItemCesta(idCesta,idItem) values(2,2);
