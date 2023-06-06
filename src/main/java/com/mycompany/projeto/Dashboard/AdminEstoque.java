@@ -218,7 +218,7 @@ public class AdminEstoque extends javax.swing.JPanel {
 
             while (rs.next()) {
                 modelo.addRow(new Object[]{
-                    //Começa no dois por que nao quero trazer o campo idItem do mySql
+                 
                     rs.getString(1),
                     rs.getString(2),
                     rs.getString(3)

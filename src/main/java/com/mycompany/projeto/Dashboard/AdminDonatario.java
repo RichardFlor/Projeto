@@ -186,7 +186,7 @@ public class AdminDonatario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastrarMouseClicked
-        new AdminCadastroEstoque().setVisible(true);
+        new AdminCadastroDonatario().setVisible(true);
 
 
     }//GEN-LAST:event_lblCadastrarMouseClicked
