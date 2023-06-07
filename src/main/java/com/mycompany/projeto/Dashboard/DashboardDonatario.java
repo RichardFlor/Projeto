@@ -29,13 +29,12 @@ public class DashboardDonatario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        lblTypeUser = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblDonatario = new javax.swing.JLabel();
+        lblBemVindo = new javax.swing.JLabel();
+        lblNomeUsuario = new javax.swing.JLabel();
+        lblIconPerfil = new javax.swing.JLabel();
+        lblSolicitacao = new javax.swing.JLabel();
         btnMeuPerfil = new com.mycompany.projeto.ButtonCustom.ButtonRadius();
-        btnMeuPerfil1 = new com.mycompany.projeto.ButtonCustom.ButtonRadius();
         btnSolicitacao = new com.mycompany.projeto.ButtonCustom.ButtonRadius();
         lblClose = new javax.swing.JLabel();
         lblClose1 = new javax.swing.JLabel();
@@ -60,26 +59,26 @@ public class DashboardDonatario extends javax.swing.JFrame {
         jLabel3.setText("_________________________");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 20));
 
-        jLabel2.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel2.setText("Donatário");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 90, -1));
+        lblDonatario.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        lblDonatario.setForeground(new java.awt.Color(242, 242, 242));
+        lblDonatario.setText("Donatário");
+        jPanel1.add(lblDonatario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 90, -1));
 
-        jLabel1.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel1.setText("Bem Vindo ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 80, 20));
+        lblBemVindo.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        lblBemVindo.setForeground(new java.awt.Color(242, 242, 242));
+        lblBemVindo.setText("Bem Vindo ");
+        jPanel1.add(lblBemVindo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 80, 20));
 
-        lblTypeUser.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
-        lblTypeUser.setForeground(new java.awt.Color(242, 242, 242));
-        lblTypeUser.setText("nome");
-        jPanel1.add(lblTypeUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+        lblNomeUsuario.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        lblNomeUsuario.setForeground(new java.awt.Color(242, 242, 242));
+        lblNomeUsuario.setText("nome");
+        jPanel1.add(lblNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconPerfil.png")); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
+        lblIconPerfil.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconPerfil.png")); // NOI18N
+        jPanel1.add(lblIconPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconEstoque.png")); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+        lblSolicitacao.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconEstoque.png")); // NOI18N
+        jPanel1.add(lblSolicitacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
         btnMeuPerfil.setBackground(new java.awt.Color(25, 118, 211));
         btnMeuPerfil.setBorder(null);
@@ -100,21 +99,6 @@ public class DashboardDonatario extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnMeuPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 240, 100));
-
-        btnMeuPerfil1.setBackground(new java.awt.Color(25, 118, 211));
-        btnMeuPerfil1.setBorder(null);
-        btnMeuPerfil1.setForeground(new java.awt.Color(242, 242, 242));
-        btnMeuPerfil1.setText("MEU PERFIL");
-        btnMeuPerfil1.setBorderColor(new java.awt.Color(25, 118, 211));
-        btnMeuPerfil1.setColor(new java.awt.Color(25, 118, 211));
-        btnMeuPerfil1.setColorClick(new java.awt.Color(0, 51, 153));
-        btnMeuPerfil1.setColorOver(new java.awt.Color(0, 51, 153));
-        btnMeuPerfil1.setFocusable(false);
-        btnMeuPerfil1.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        btnMeuPerfil1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnMeuPerfil1.setMaximumSize(new java.awt.Dimension(566, 512));
-        btnMeuPerfil1.setMinimumSize(new java.awt.Dimension(566, 512));
-        jPanel1.add(btnMeuPerfil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 240, 100));
 
         btnSolicitacao.setBackground(new java.awt.Color(25, 118, 211));
         btnSolicitacao.setBorder(null);
@@ -524,18 +508,17 @@ public class DashboardDonatario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.mycompany.projeto.ButtonCustom.ButtonRadius btnMeuPerfil;
-    private com.mycompany.projeto.ButtonCustom.ButtonRadius btnMeuPerfil1;
     private com.mycompany.projeto.ButtonCustom.ButtonRadius btnSolicitacao;
     private javax.swing.JPanel content;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblBemVindo;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblClose1;
-    public static javax.swing.JLabel lblTypeUser;
+    private javax.swing.JLabel lblDonatario;
+    private javax.swing.JLabel lblIconPerfil;
+    public static javax.swing.JLabel lblNomeUsuario;
+    private javax.swing.JLabel lblSolicitacao;
     // End of variables declaration//GEN-END:variables
 }

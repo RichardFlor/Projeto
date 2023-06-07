@@ -13,7 +13,7 @@ public class DashboardDoador extends javax.swing.JFrame {
         initComponents();
         //Codigo para mostrar a tela de itens para o doador
         DoadorItens itens = new DoadorItens();
-        itens.setSize(880, 530);
+        itens.setSize(880, 590);
         itens.setLocation(0, 0);
 
         content.removeAll();
@@ -28,18 +28,13 @@ public class DashboardDoador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        lblTypeUser = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblDoador = new javax.swing.JLabel();
+        lblBemVindo = new javax.swing.JLabel();
+        lblNomeUsuario = new javax.swing.JLabel();
+        lblIconPerfil = new javax.swing.JLabel();
+        lblIconItem = new javax.swing.JLabel();
         btnMeuPerfil = new com.mycompany.projeto.ButtonCustom.ButtonRadius();
         btnItens = new com.mycompany.projeto.ButtonCustom.ButtonRadius();
-        txtPesquisa = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        lblClose = new javax.swing.JLabel();
-        lblClose2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,26 +55,26 @@ public class DashboardDoador extends javax.swing.JFrame {
         jLabel3.setText("_________________________");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 20));
 
-        jLabel2.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel2.setText("Doador");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 70, -1));
+        lblDoador.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        lblDoador.setForeground(new java.awt.Color(242, 242, 242));
+        lblDoador.setText("Doador");
+        jPanel1.add(lblDoador, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 70, -1));
 
-        jLabel4.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel4.setText("Bem Vindo ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 80, 20));
+        lblBemVindo.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        lblBemVindo.setForeground(new java.awt.Color(242, 242, 242));
+        lblBemVindo.setText("Bem Vindo ");
+        jPanel1.add(lblBemVindo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 80, 20));
 
-        lblTypeUser.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
-        lblTypeUser.setForeground(new java.awt.Color(242, 242, 242));
-        lblTypeUser.setText("nome");
-        jPanel1.add(lblTypeUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+        lblNomeUsuario.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        lblNomeUsuario.setForeground(new java.awt.Color(242, 242, 242));
+        lblNomeUsuario.setText("nome");
+        jPanel1.add(lblNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconPerfil.png")); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
+        lblIconPerfil.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconPerfil.png")); // NOI18N
+        jPanel1.add(lblIconPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconEstoque.png")); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+        lblIconItem.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconEstoque.png")); // NOI18N
+        jPanel1.add(lblIconItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
         btnMeuPerfil.setBackground(new java.awt.Color(25, 118, 211));
         btnMeuPerfil.setBorder(null);
@@ -124,44 +119,7 @@ public class DashboardDoador extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 590));
 
-        txtPesquisa.setBackground(new java.awt.Color(235, 235, 235));
-        txtPesquisa.setText(" ");
-        txtPesquisa.setBorder(null);
-        txtPesquisa.setDisabledTextColor(new java.awt.Color(208, 211, 210));
-        getContentPane().add(txtPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 270, 30));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconLupa.png")); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, -1, 30));
-
-        lblClose.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
-        lblClose.setForeground(new java.awt.Color(25, 118, 211));
-        lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose.setText("Seeds");
-        lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblClose.setName(""); // NOI18N
-        lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblCloseMouseClicked(evt);
-            }
-        });
-        getContentPane().add(lblClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, 90, 29));
-
-        lblClose2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblClose2.setForeground(new java.awt.Color(255, 255, 255));
-        lblClose2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconSair.png")); // NOI18N
-        lblClose2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblClose2.setName(""); // NOI18N
-        lblClose2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblClose2MouseClicked(evt);
-            }
-        });
-        getContentPane().add(lblClose2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, 40, 29));
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setFocusable(false);
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 880, 60));
+        content.setPreferredSize(new java.awt.Dimension(880, 590));
 
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
@@ -171,10 +129,10 @@ public class DashboardDoador extends javax.swing.JFrame {
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
         );
 
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 880, 530));
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 880, 590));
 
         setSize(new java.awt.Dimension(1117, 588));
         setLocationRelativeTo(null);
@@ -193,21 +151,10 @@ public class DashboardDoador extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formWindowOpened
 
-    private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
-        Login login = new Login();
-        this.dispose();
-        login.setVisible(true);
-    }//GEN-LAST:event_lblCloseMouseClicked
-
-    private void lblClose2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblClose2MouseClicked
-        //Botao fechar
-        System.exit(0);
-    }//GEN-LAST:event_lblClose2MouseClicked
-
     private void btnMeuPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeuPerfilActionPerformed
         //Codigo para mostrar a tela de perfil para o doador
         DoadorPerfil perfil = new DoadorPerfil();
-        perfil.setSize(880, 530);
+        perfil.setSize(880, 590);
         perfil.setLocation(0, 0);
 
         content.removeAll();
@@ -219,7 +166,7 @@ public class DashboardDoador extends javax.swing.JFrame {
     private void btnItensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItensActionPerformed
         //Codigo para mostrar a tela de itens para o doador
         DoadorItens itens = new DoadorItens();
-        itens.setSize(880, 530);
+        itens.setSize(880, 590);
         itens.setLocation(0, 0);
 
         content.removeAll();
@@ -522,17 +469,12 @@ public class DashboardDoador extends javax.swing.JFrame {
     private com.mycompany.projeto.ButtonCustom.ButtonRadius btnItens;
     private com.mycompany.projeto.ButtonCustom.ButtonRadius btnMeuPerfil;
     private javax.swing.JPanel content;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel lblClose;
-    private javax.swing.JLabel lblClose2;
-    public static javax.swing.JLabel lblTypeUser;
-    private javax.swing.JTextField txtPesquisa;
+    private javax.swing.JLabel lblBemVindo;
+    private javax.swing.JLabel lblDoador;
+    private javax.swing.JLabel lblIconItem;
+    private javax.swing.JLabel lblIconPerfil;
+    public static javax.swing.JLabel lblNomeUsuario;
     // End of variables declaration//GEN-END:variables
 }

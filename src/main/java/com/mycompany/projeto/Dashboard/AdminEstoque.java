@@ -72,11 +72,11 @@ public class AdminEstoque extends javax.swing.JPanel {
 
             },
             new String [] {
-                "idItem", "Alimento", "Validade", "Editar/Excluir"
+                "idItem", "Alimento", "Validade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -89,7 +89,6 @@ public class AdminEstoque extends javax.swing.JPanel {
         if (tableEstoque.getColumnModel().getColumnCount() > 0) {
             tableEstoque.getColumnModel().getColumn(1).setPreferredWidth(80);
             tableEstoque.getColumnModel().getColumn(2).setPreferredWidth(30);
-            tableEstoque.getColumnModel().getColumn(3).setPreferredWidth(5);
         }
 
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconLupa.png")); // NOI18N
@@ -167,7 +166,7 @@ public class AdminEstoque extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelRadius1, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -180,7 +179,7 @@ public class AdminEstoque extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

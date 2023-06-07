@@ -1,18 +1,27 @@
 package com.mycompany.projeto.Dashboard;
 
+import com.mycompany.projeto.TableCustom.TableCustom;
+import java.awt.BorderLayout;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import com.mycompany.projeto.JDBC.MySQL;
+
 /**
  *
  * @author Richard
  */
 public class DoadorPerfil extends javax.swing.JPanel {
 
-    /**
-     * Creates new form EstoqueAdmin
-     */
+    Connection connection = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+
     public DoadorPerfil() {
         initComponents();
-        
-        
+ 
     }
 
     /**
@@ -24,58 +33,103 @@ public class DoadorPerfil extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         panelRadius1 = new com.mycompany.projeto.PanelCustom.PanelRadius();
-        jLabel1 = new javax.swing.JLabel();
+        lblAtualizar = new javax.swing.JLabel();
+        lblClose2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(235, 235, 235));
         setPreferredSize(new java.awt.Dimension(880, 530));
 
+        jPanel1.setBackground(new java.awt.Color(235, 235, 235));
+        jPanel1.setPreferredSize(new java.awt.Dimension(880, 590));
+
         panelRadius1.setBackground(new java.awt.Color(255, 255, 255));
+        panelRadius1.setPreferredSize(new java.awt.Dimension(839, 487));
         panelRadius1.setRoundBottomLeft(40);
         panelRadius1.setRoundBottomRight(40);
         panelRadius1.setRoundTopLeft(40);
         panelRadius1.setRoundTopRight(40);
 
-        jLabel1.setText("TELA  DOADOR PERFIL");
+        lblAtualizar.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        lblAtualizar.setForeground(new java.awt.Color(25, 118, 211));
+        lblAtualizar.setText("Atualizar");
+        lblAtualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lblClose2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblClose2.setForeground(new java.awt.Color(255, 255, 255));
+        lblClose2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblClose2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconSair.png")); // NOI18N
+        lblClose2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblClose2.setName(""); // NOI18N
+        lblClose2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblClose2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRadius1Layout = new javax.swing.GroupLayout(panelRadius1);
         panelRadius1.setLayout(panelRadius1Layout);
         panelRadius1Layout.setHorizontalGroup(
             panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRadius1Layout.createSequentialGroup()
-                .addGap(297, 297, 297)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addGap(20, 782, Short.MAX_VALUE)
+                .addComponent(lblClose2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+            .addGroup(panelRadius1Layout.createSequentialGroup()
+                .addGap(380, 380, 380)
+                .addComponent(lblAtualizar)
+                .addGap(0, 390, Short.MAX_VALUE))
         );
         panelRadius1Layout.setVerticalGroup(
             panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRadius1Layout.createSequentialGroup()
-                .addGap(194, 194, 194)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(lblClose2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 448, Short.MAX_VALUE)
+                .addComponent(lblAtualizar)
+                .addGap(29, 29, 29))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(panelRadius1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelRadius1, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(panelRadius1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(panelRadius1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void lblClose2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblClose2MouseClicked
+        //Botao fechar
+        System.exit(0);
+    }//GEN-LAST:event_lblClose2MouseClicked
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblAtualizar;
+    private javax.swing.JLabel lblClose2;
     private com.mycompany.projeto.PanelCustom.PanelRadius panelRadius1;
     // End of variables declaration//GEN-END:variables
 }

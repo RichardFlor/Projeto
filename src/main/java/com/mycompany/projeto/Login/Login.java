@@ -39,7 +39,7 @@ public class Login extends javax.swing.JFrame {
                         DashboardAdmin dashboardAdmin = new DashboardAdmin();
                         dashboardAdmin.setVisible(true);
                         //Codigo abaixo mostra o nome do perfil logado
-                        DashboardAdmin.lblTypeUser.setText(rs.getString(2));
+                        DashboardAdmin.lblNomeUsuario.setText(rs.getString(2));
                         //Ao chamar a tela Dashboard a tela de login automaticamente é fechada
                         this.dispose();
                         //Fechar conexão com o banco de dados
@@ -49,7 +49,7 @@ public class Login extends javax.swing.JFrame {
                         DashboardDonatario dashboardDonatario = new DashboardDonatario();
                         dashboardDonatario.setVisible(true);
                         //Codigo abaixo mostra o nome do perfil logado
-                        DashboardDonatario.lblTypeUser.setText(rs.getString(2));
+                        DashboardDonatario.lblNomeUsuario.setText(rs.getString(2));
                         //Ao chamar a tela Dashboard a tela de login automaticamente é fechada
                         this.dispose();
                         //Fechar conexão com o banco de dados
@@ -59,7 +59,7 @@ public class Login extends javax.swing.JFrame {
                         DashboardDoador dashboardDoador = new DashboardDoador();
                         dashboardDoador.setVisible(true);
                         //Codigo abaixo mostra o nome do perfil logado
-                        dashboardDoador.lblTypeUser.setText(rs.getString(2));
+                        dashboardDoador.lblNomeUsuario.setText(rs.getString(2));
                         //Ao chamar a tela Dashboard a tela de login automaticamente é fechada
                         this.dispose();
                         //Fechar conexão com o banco de dados
