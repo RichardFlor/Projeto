@@ -72,7 +72,7 @@ public class AdminDoador extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nome", "Contato", "Editar/Excluir"
+                "Nome do doador", "Contato", "Editar/Excluir"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -96,7 +96,6 @@ public class AdminDoador extends javax.swing.JPanel {
 
         txtPesquisa.setBackground(new java.awt.Color(235, 235, 235));
         txtPesquisa.setBorder(null);
-        txtPesquisa.setCaretPosition(0);
         txtPesquisa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPesquisaKeyReleased(evt);
@@ -234,7 +233,7 @@ public class AdminDoador extends javax.swing.JPanel {
 
             //método para pesquisa avançada no banco com filtro
     private void pesquisarDoador() {
-        String sql = "SELECT nome, telefone FROM tblUsuario WHERE nome LIKE ? AND perfil = 'doador';";
+        String sql = "SELECT nome as 'Nome do doador', telefone as 'Contato' FROM tblUsuario WHERE nome LIKE ? AND perfil = 'doador';";
         try {
             pst = connection.prepareStatement(sql);
             //Passando o conteudo da caixa de pesquisa para o ?

@@ -72,7 +72,7 @@ public class DoadorItens extends javax.swing.JPanel {
 
             },
             new String [] {
-                "idItem", "Alimento", "Validade"
+                "Codigo do item", "Nome", "Validade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -234,7 +234,7 @@ public class DoadorItens extends javax.swing.JPanel {
 
     //método para pesquisa avançada no banco com filtro
     private void pesquisarItem() {
-        String sql = "select * from tblItem where nomeItem like ?";
+        String sql = "select idItem as 'Codigo do item',nomeItem as 'Nome', validade as 'Validade' from tblItem where nomeItem like ?";
         try {
             pst = connection.prepareStatement(sql);
             //Passando o conteudo da caixa de pesquisa para o ?
