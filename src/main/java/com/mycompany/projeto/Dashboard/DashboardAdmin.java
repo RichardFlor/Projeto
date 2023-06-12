@@ -159,7 +159,12 @@ public class DashboardAdmin extends javax.swing.JFrame {
         btnCesta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCesta.setMaximumSize(new java.awt.Dimension(98, 18));
         btnCesta.setMinimumSize(new java.awt.Dimension(98, 18));
-        jPanel1.add(btnCesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 240, 110));
+        btnCesta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCestaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 240, 100));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 590));
 
@@ -230,6 +235,18 @@ public class DashboardAdmin extends javax.swing.JFrame {
         content.revalidate();
         content.repaint();
     }//GEN-LAST:event_btnDonatarioActionPerformed
+
+    private void btnCestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCestaActionPerformed
+              //Codigo para mostrar a tela de Cestas para o admin
+        AdminCesta cesta = new AdminCesta();
+        cesta.setSize(880, 590);
+        cesta.setLocation(0, 0);
+
+        content.removeAll();
+        content.add(cesta, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_btnCestaActionPerformed
 
     /**
      * @param args the command line arguments

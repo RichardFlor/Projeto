@@ -317,9 +317,12 @@
               <Dimension value="[98, 18]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCestaActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="470" width="240" height="110"/>
+              <AbsoluteConstraints x="0" y="470" width="240" height="100"/>
             </Constraint>
           </Constraints>
         </Component>
