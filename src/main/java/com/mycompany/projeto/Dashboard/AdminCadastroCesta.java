@@ -103,7 +103,7 @@ public class AdminCadastroCesta extends javax.swing.JFrame {
 
         lblValidade.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         lblValidade.setForeground(new java.awt.Color(25, 118, 211));
-        lblValidade.setText("Nome donatario:*");
+        lblValidade.setText("Id do donatario:*");
         getContentPane().add(lblValidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 150, -1));
 
         lblNomeProduto.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N

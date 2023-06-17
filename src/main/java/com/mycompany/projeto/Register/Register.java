@@ -50,8 +50,9 @@ public class Register extends javax.swing.JFrame {
                 }
             }
 
-        } catch (Exception e) {
-
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,"Este email ja esta sendo utilizado");
+        }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }
@@ -247,7 +248,7 @@ public class Register extends javax.swing.JFrame {
         jPanel2.add(lblUserIcon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 40, 39));
 
         lblReturnIcon.setForeground(new java.awt.Color(255, 255, 255));
-        lblReturnIcon.setText("Return to Login Page");
+        lblReturnIcon.setText("Voltar para tela de Login");
         lblReturnIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblReturnIcon.setMaximumSize(new java.awt.Dimension(10, 10));
         lblReturnIcon.setMinimumSize(new java.awt.Dimension(10, 10));
@@ -259,7 +260,7 @@ public class Register extends javax.swing.JFrame {
                 lblReturnIconMouseClicked(evt);
             }
         });
-        jPanel2.add(lblReturnIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 120, 30));
+        jPanel2.add(lblReturnIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 140, 30));
 
         lblUsername1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lblUsername1.setForeground(new java.awt.Color(199, 226, 255));
@@ -314,9 +315,9 @@ public class Register extends javax.swing.JFrame {
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // Chamando o método adicionar
         adicionar();
-        Login login = new Login();
-        this.dispose();
-        login.setVisible(true);
+//        Login login = new Login();
+//        this.dispose();
+//        login.setVisible(true);
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void txtUsernameRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameRegisterActionPerformed

@@ -13,8 +13,8 @@ public class DashboardDonatario extends javax.swing.JFrame {
         initComponents();
 
         //Codigo para mostrar a tela de estoque para o admin
-        DonatarioSolicitacao solicitacao = new DonatarioSolicitacao();
-        solicitacao.setSize(880, 530);
+        Doacoes solicitacao = new Doacoes();
+        solicitacao.setSize(880, 590);
         solicitacao.setLocation(0, 0);
 
         content.removeAll();
@@ -36,9 +36,6 @@ public class DashboardDonatario extends javax.swing.JFrame {
         lblSolicitacao = new javax.swing.JLabel();
         btnMeuPerfil = new com.mycompany.projeto.ButtonCustom.ButtonRadius();
         btnSolicitacao = new com.mycompany.projeto.ButtonCustom.ButtonRadius();
-        lblClose = new javax.swing.JLabel();
-        lblClose1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -122,34 +119,7 @@ public class DashboardDonatario extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 590));
 
-        lblClose.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
-        lblClose.setForeground(new java.awt.Color(25, 118, 211));
-        lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose.setText("Seeds");
-        lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblClose.setName(""); // NOI18N
-        lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblCloseMouseClicked(evt);
-            }
-        });
-        getContentPane().add(lblClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, 90, 29));
-
-        lblClose1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblClose1.setForeground(new java.awt.Color(255, 255, 255));
-        lblClose1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconSair.png")); // NOI18N
-        lblClose1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblClose1.setName(""); // NOI18N
-        lblClose1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblClose1MouseClicked(evt);
-            }
-        });
-        getContentPane().add(lblClose1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, 40, 29));
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 880, 60));
+        content.setPreferredSize(new java.awt.Dimension(880, 590));
 
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
@@ -159,10 +129,10 @@ public class DashboardDonatario extends javax.swing.JFrame {
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
         );
 
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 880, 530));
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 880, 590));
 
         setSize(new java.awt.Dimension(1120, 590));
         setLocationRelativeTo(null);
@@ -181,21 +151,10 @@ public class DashboardDonatario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formWindowOpened
 
-    private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
-        Login login = new Login();
-        this.dispose();
-        login.setVisible(true);
-    }//GEN-LAST:event_lblCloseMouseClicked
-
-    private void lblClose1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblClose1MouseClicked
-        //Botao fechar
-        System.exit(0);
-    }//GEN-LAST:event_lblClose1MouseClicked
-
     private void btnSolicitacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitacaoActionPerformed
         //Codigo para mostrar a tela de solicitaçoes para o donatario
-        DonatarioSolicitacao solicitacao = new DonatarioSolicitacao();
-        solicitacao.setSize(880, 530);
+        Doacoes solicitacao = new Doacoes();
+        solicitacao.setSize(880, 590);
         solicitacao.setLocation(0, 0);
 
         content.removeAll();
@@ -207,7 +166,7 @@ public class DashboardDonatario extends javax.swing.JFrame {
     private void btnMeuPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeuPerfilActionPerformed
         //Codigo para mostrar a tela de perfil para o donatario
         DonatarioPerfil perfil = new DonatarioPerfil();
-        perfil.setSize(880, 530);
+        perfil.setSize(880, 590);
         perfil.setLocation(0, 0);
 
         content.removeAll();
@@ -512,10 +471,7 @@ public class DashboardDonatario extends javax.swing.JFrame {
     private javax.swing.JPanel content;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblBemVindo;
-    private javax.swing.JLabel lblClose;
-    private javax.swing.JLabel lblClose1;
     private javax.swing.JLabel lblDonatario;
     private javax.swing.JLabel lblIconPerfil;
     public static javax.swing.JLabel lblNomeUsuario;

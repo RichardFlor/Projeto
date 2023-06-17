@@ -2,7 +2,7 @@ package com.mycompany.projeto.Dashboard;
 
 
 import java.awt.BorderLayout;
-import com.mycompany.projeto.Login.Login;
+
 
 public class DashboardAdmin extends javax.swing.JFrame {
 

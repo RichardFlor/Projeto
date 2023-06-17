@@ -36,7 +36,7 @@ public class AdminCadastroEstoque extends javax.swing.JFrame {
         }
     }
 
-    //Método para Adcionar Usuários
+    //Método para Adcionar Item
     private void adicionarItem() {
 
         String sql = "insert into tblItem(nomeItem,validade) values(?,?)";

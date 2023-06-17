@@ -13,6 +13,8 @@ public class Login extends javax.swing.JFrame {
     Connection connection = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
+    
+    public static int IDUSUARIO;  
 
     //Método logar
     public void logar() {
@@ -33,6 +35,9 @@ public class Login extends javax.swing.JFrame {
             if (rs.next()) {
                 //A linha a baixo obtem o conteúdo do campo perfil da tabela Usuario
                 String perfil = rs.getString(12);
+                int idUsuario = rs.getInt(1);
+                IDUSUARIO = idUsuario;
+                //DonatarioPerfil.IDUARIO = idUsuario;
                 //System.out.println(perfil);
                 switch (perfil) {
                     case "admin":

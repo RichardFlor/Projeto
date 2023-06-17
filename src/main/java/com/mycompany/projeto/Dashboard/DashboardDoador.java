@@ -71,10 +71,10 @@ public class DashboardDoador extends javax.swing.JFrame {
         jPanel1.add(lblNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
 
         lblIconPerfil.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconPerfil.png")); // NOI18N
-        jPanel1.add(lblIconPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
+        jPanel1.add(lblIconPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
 
         lblIconItem.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconEstoque.png")); // NOI18N
-        jPanel1.add(lblIconItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+        jPanel1.add(lblIconItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
 
         btnMeuPerfil.setBackground(new java.awt.Color(25, 118, 211));
         btnMeuPerfil.setBorder(null);
@@ -94,7 +94,7 @@ public class DashboardDoador extends javax.swing.JFrame {
                 btnMeuPerfilActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMeuPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 240, 100));
+        jPanel1.add(btnMeuPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 240, 100));
 
         btnItens.setBackground(new java.awt.Color(25, 118, 211));
         btnItens.setBorder(null);
@@ -115,7 +115,7 @@ public class DashboardDoador extends javax.swing.JFrame {
                 btnItensActionPerformed(evt);
             }
         });
-        jPanel1.add(btnItens, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 240, 100));
+        jPanel1.add(btnItens, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 240, 100));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 590));
 

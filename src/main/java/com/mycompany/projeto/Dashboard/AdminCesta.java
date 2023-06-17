@@ -1,7 +1,6 @@
 package com.mycompany.projeto.Dashboard;
 
 import com.mycompany.projeto.TableCustom.TableCustom;
-import java.awt.BorderLayout;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,7 +23,9 @@ public class AdminCesta extends javax.swing.JPanel {
     public AdminCesta() {
         initComponents();
         TableCustom.apply(jScrollPane1, TableCustom.TableType.DEFAULT);
+        TableCustom.apply(jScrollPane3, TableCustom.TableType.DEFAULT);
         carregarTabela();
+        carregarTabelaDonatario();
     }
 
     /**
@@ -38,12 +39,18 @@ public class AdminCesta extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         panelRadius1 = new com.mycompany.projeto.PanelCustom.PanelRadius();
-        lblCadastrar = new javax.swing.JLabel();
+        lblCadastrarDoacao = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableCesta = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         txtPesquisa = new javax.swing.JTextField();
         lblClose2 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tableDonatario = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblRemoverDoacao = new javax.swing.JLabel();
+        txtIdCesta = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(880, 530));
 
@@ -57,13 +64,13 @@ public class AdminCesta extends javax.swing.JPanel {
         panelRadius1.setRoundTopLeft(40);
         panelRadius1.setRoundTopRight(40);
 
-        lblCadastrar.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
-        lblCadastrar.setForeground(new java.awt.Color(25, 118, 211));
-        lblCadastrar.setText("Cadastrar");
-        lblCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblCadastrarDoacao.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        lblCadastrarDoacao.setForeground(new java.awt.Color(25, 118, 211));
+        lblCadastrarDoacao.setText("Cadastrar doação");
+        lblCadastrarDoacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCadastrarDoacao.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblCadastrarMouseClicked(evt);
+                lblCadastrarDoacaoMouseClicked(evt);
             }
         });
 
@@ -72,11 +79,11 @@ public class AdminCesta extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Codigo da cesta", "Donatario"
+                "Código do donatário", "Nome do donatário", "CPF"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -85,6 +92,11 @@ public class AdminCesta extends javax.swing.JPanel {
         });
         tableCesta.setToolTipText("");
         tableCesta.setRowHeight(40);
+        tableCesta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableCestaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableCesta);
         if (tableCesta.getColumnModel().getColumnCount() > 0) {
             tableCesta.getColumnModel().getColumn(1).setPreferredWidth(80);
@@ -112,6 +124,53 @@ public class AdminCesta extends javax.swing.JPanel {
             }
         });
 
+        tableDonatario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código do Donatário", "Nome do donatário"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableDonatario.setToolTipText("");
+        tableDonatario.setRowHeight(40);
+        jScrollPane3.setViewportView(tableDonatario);
+        if (tableDonatario.getColumnModel().getColumnCount() > 0) {
+            tableDonatario.getColumnModel().getColumn(1).setPreferredWidth(80);
+        }
+
+        jLabel1.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(25, 118, 211));
+        jLabel1.setText("Cestas enviadas:");
+
+        jLabel2.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(25, 118, 211));
+        jLabel2.setText("Lista para receber doação:");
+
+        lblRemoverDoacao.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        lblRemoverDoacao.setForeground(new java.awt.Color(25, 118, 211));
+        lblRemoverDoacao.setText("Remover doação");
+        lblRemoverDoacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblRemoverDoacao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblRemoverDoacaoMouseClicked(evt);
+            }
+        });
+
+        txtIdCesta.setForeground(new java.awt.Color(255, 255, 255));
+        txtIdCesta.setBorder(new javax.swing.border.MatteBorder(null));
+        txtIdCesta.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtIdCesta.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtIdCesta.setSelectionColor(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout panelRadius1Layout = new javax.swing.GroupLayout(panelRadius1);
         panelRadius1.setLayout(panelRadius1Layout);
         panelRadius1Layout.setHorizontalGroup(
@@ -128,11 +187,19 @@ public class AdminCesta extends javax.swing.JPanel {
                         .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblClose2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))))
-            .addGroup(panelRadius1Layout.createSequentialGroup()
-                .addGap(380, 380, 380)
-                .addComponent(lblCadastrar)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(17, 17, 17))
+                    .addGroup(panelRadius1Layout.createSequentialGroup()
+                        .addGroup(panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelRadius1Layout.createSequentialGroup()
+                                .addComponent(txtIdCesta, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(224, 224, 224)
+                                .addComponent(lblCadastrarDoacao)
+                                .addGap(71, 71, 71)
+                                .addComponent(lblRemoverDoacao))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         panelRadius1Layout.setVerticalGroup(
             panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,11 +213,20 @@ public class AdminCesta extends javax.swing.JPanel {
                     .addGroup(panelRadius1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(lblClose2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblCadastrar)
-                .addGap(29, 29, 29))
+                .addGap(12, 12, 12)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCadastrarDoacao)
+                    .addComponent(lblRemoverDoacao)
+                    .addComponent(txtIdCesta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -182,10 +258,10 @@ public class AdminCesta extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastrarMouseClicked
+    private void lblCadastrarDoacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastrarDoacaoMouseClicked
         new AdminCadastroCesta().setVisible(true);
-        
-    }//GEN-LAST:event_lblCadastrarMouseClicked
+
+    }//GEN-LAST:event_lblCadastrarDoacaoMouseClicked
 
     private void lblClose2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblClose2MouseClicked
         //Botao fechar
@@ -195,7 +271,16 @@ public class AdminCesta extends javax.swing.JPanel {
     private void txtPesquisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisaKeyReleased
         // TODO add your handling code here:
         pesquisarItem();
+        pesquisarDonatario();
     }//GEN-LAST:event_txtPesquisaKeyReleased
+
+    private void lblRemoverDoacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRemoverDoacaoMouseClicked
+        deletar();
+    }//GEN-LAST:event_lblRemoverDoacaoMouseClicked
+
+    private void tableCestaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableCestaMouseClicked
+        setarCampos();
+    }//GEN-LAST:event_tableCestaMouseClicked
 
     //Método para listar os dados do banco na tabela
     public void carregarTabela() {
@@ -206,15 +291,44 @@ public class AdminCesta extends javax.swing.JPanel {
 
         tableCesta.getColumnModel().getColumn(0).setPreferredWidth(80);
         tableCesta.getColumnModel().getColumn(1).setPreferredWidth(20);
-
+        tableCesta.getColumnModel().getColumn(2).setPreferredWidth(20);
+        
         try {
 
-            pst = connection.prepareStatement("SELECT c.idCesta, u.nome FROM tblCesta c JOIN tblUsuario u ON u.idUsuario = c.idUsuario;");
+            pst = connection.prepareStatement("SELECT u.idUsuario,u.nome, u.cpf FROM tblCesta c JOIN tblUsuario u ON u.idUsuario = c.idUsuario;");
             rs = pst.executeQuery();
 
             while (rs.next()) {
                 modelo.addRow(new Object[]{
-                 
+                    rs.getString(1),
+                    rs.getString(2),
+                    rs.getString(3)
+
+                });
+            }
+
+        } catch (Exception ErroSql) {
+            JOptionPane.showMessageDialog(null, "Erro ao carregar a Tabela de dados: " + ErroSql, "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public void carregarTabelaDonatario() {
+        connection = MySQL.conector();
+
+        DefaultTableModel modelo = (DefaultTableModel) tableDonatario.getModel();
+        modelo.setNumRows(0);
+
+        tableDonatario.getColumnModel().getColumn(0).setPreferredWidth(80);
+        tableDonatario.getColumnModel().getColumn(1).setPreferredWidth(20);
+
+        try {
+
+            pst = connection.prepareStatement("select idUsuario,nome from tblUsuario where perfil='donatario';");
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                modelo.addRow(new Object[]{
+                    //Começa no dois por que nao quero trazer o campo idItem do mySql
                     rs.getString(1),
                     rs.getString(2)
                 // rs.getString(3)
@@ -225,12 +339,11 @@ public class AdminCesta extends javax.swing.JPanel {
         } catch (Exception ErroSql) {
             JOptionPane.showMessageDialog(null, "Erro ao carregar a Tabela de dados: " + ErroSql, "Erro", JOptionPane.ERROR_MESSAGE);
         }
-
     }
 
     //método para pesquisa avançada no banco com filtro
     private void pesquisarItem() {
-        String sql = "SELECT c.idCesta as 'Codigo da cesta', u.nome as 'Donatario' FROM tblCesta c JOIN tblUsuario u ON u.idUsuario = c.idUsuario WHERE u.nome LIKE ? AND u.perfil = 'donatario'";
+        String sql = "SELECT u.idUsuario as 'Código do donatário', u.nome as 'Donatario', u.cpf as 'CPF' FROM tblCesta c JOIN tblUsuario u ON u.idUsuario = c.idUsuario WHERE u.nome LIKE ? AND u.perfil = 'donatario'";
         try {
             pst = connection.prepareStatement(sql);
             //Passando o conteudo da caixa de pesquisa para o ?
@@ -244,15 +357,65 @@ public class AdminCesta extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+        private void pesquisarDonatario() {
+        String sql = "SELECT idUsuario as 'Código do donatário', nome as 'Nome do donatário'FROM tblUsuario WHERE nome LIKE ? AND perfil = 'donatario';";
+        try {
+            pst = connection.prepareStatement(sql);
+            //Passando o conteudo da caixa de pesquisa para o ?
+            //atenção ao "%" - continuação da String sql
+            pst.setString(1, txtPesquisa.getText() + "%");
+            rs = pst.executeQuery();
+
+            //A linha abaixo usa a biblioteca rs2xml.jar para preencher a tabela
+            tableDonatario.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+            //Método para preencher os campos do formulario com o conteudo da tabela
+    public void setarCampos() {
+        int setar = tableCesta.getSelectedRow();
+        txtIdCesta.setText(tableCesta.getModel().getValueAt(setar,0).toString());
+    }
+    
+         //Metodo para deletar 
+    private void deletar(){
+        int confirma = JOptionPane.showConfirmDialog(null, "Deseja remover este doação?","Atenção", JOptionPane.YES_NO_OPTION);
+        if (confirma == JOptionPane.YES_OPTION) {
+            String sql = "delete from tblCesta where idUsuario=?";
+            try {
+                pst = connection.prepareStatement(sql);
+                pst.setString(1, txtIdCesta.getText());
+                int apagado = pst.executeUpdate();
+                if(apagado > 0 ){
+                    JOptionPane.showMessageDialog(null,"Doação removida com sucesso");
+                    txtIdCesta.setText(null);
+
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+            
+        } else {
+        }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblCadastrar;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lblCadastrarDoacao;
     private javax.swing.JLabel lblClose2;
+    private javax.swing.JLabel lblRemoverDoacao;
     private com.mycompany.projeto.PanelCustom.PanelRadius panelRadius1;
     private javax.swing.JTable tableCesta;
+    private javax.swing.JTable tableDonatario;
+    private javax.swing.JTextField txtIdCesta;
     private javax.swing.JTextField txtPesquisa;
     // End of variables declaration//GEN-END:variables
 }

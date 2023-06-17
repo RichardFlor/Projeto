@@ -38,12 +38,25 @@ public class AdminDonatario extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         panelRadius1 = new com.mycompany.projeto.PanelCustom.PanelRadius();
-        lblCadastrar = new javax.swing.JLabel();
+        lblRemoverUsuario = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableDonatario = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         txtPesquisa = new javax.swing.JTextField();
         lblClose2 = new javax.swing.JLabel();
+        lblNomeDonatario = new javax.swing.JLabel();
+        txtIdDonatario = new javax.swing.JTextField();
+        txtEmailDonatario = new javax.swing.JTextField();
+        txtSenhaDonatario = new javax.swing.JTextField();
+        txtTelefoneDonatario = new javax.swing.JTextField();
+        txtCpfDonatario = new javax.swing.JTextField();
+        txtRuaDonatario = new javax.swing.JTextField();
+        txtBairroDonatario = new javax.swing.JTextField();
+        txtNumeroDonatario = new javax.swing.JTextField();
+        txtCepDonatario = new javax.swing.JTextField();
+        txtCidadeDonatario = new javax.swing.JTextField();
+        txtPerfilDonatario = new javax.swing.JTextField();
+        txtNomeDonatario = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(880, 530));
 
@@ -57,13 +70,13 @@ public class AdminDonatario extends javax.swing.JPanel {
         panelRadius1.setRoundTopLeft(40);
         panelRadius1.setRoundTopRight(40);
 
-        lblCadastrar.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
-        lblCadastrar.setForeground(new java.awt.Color(25, 118, 211));
-        lblCadastrar.setText("Cadastrar");
-        lblCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblRemoverUsuario.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        lblRemoverUsuario.setForeground(new java.awt.Color(25, 118, 211));
+        lblRemoverUsuario.setText("Remover");
+        lblRemoverUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblRemoverUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblCadastrarMouseClicked(evt);
+                lblRemoverUsuarioMouseClicked(evt);
             }
         });
 
@@ -72,11 +85,11 @@ public class AdminDonatario extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nome do donatario", "CPF", "Editar/Excluir"
+                "Codigo do donatario", "Nome", "Email", "Senha", "Telefone", "CPF", "Rua", "Bairro", "Numero", "CEP", "Cidade", "Perfil"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -85,11 +98,15 @@ public class AdminDonatario extends javax.swing.JPanel {
         });
         tableDonatario.setToolTipText("");
         tableDonatario.setRowHeight(40);
+        tableDonatario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableDonatarioMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableDonatario);
         if (tableDonatario.getColumnModel().getColumnCount() > 0) {
             tableDonatario.getColumnModel().getColumn(0).setPreferredWidth(80);
             tableDonatario.getColumnModel().getColumn(1).setPreferredWidth(30);
-            tableDonatario.getColumnModel().getColumn(2).setPreferredWidth(5);
         }
 
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\iconLupa.png")); // NOI18N
@@ -114,13 +131,118 @@ public class AdminDonatario extends javax.swing.JPanel {
             }
         });
 
+        lblNomeDonatario.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        lblNomeDonatario.setForeground(new java.awt.Color(25, 118, 211));
+        lblNomeDonatario.setText("Doanatario selecionado:");
+
+        txtIdDonatario.setForeground(new java.awt.Color(255, 255, 255));
+        txtIdDonatario.setBorder(new javax.swing.border.MatteBorder(null));
+        txtIdDonatario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtIdDonatario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtIdDonatario.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        txtEmailDonatario.setForeground(new java.awt.Color(255, 255, 255));
+        txtEmailDonatario.setBorder(new javax.swing.border.MatteBorder(null));
+        txtEmailDonatario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtEmailDonatario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtEmailDonatario.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        txtSenhaDonatario.setForeground(new java.awt.Color(255, 255, 255));
+        txtSenhaDonatario.setBorder(new javax.swing.border.MatteBorder(null));
+        txtSenhaDonatario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtSenhaDonatario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtSenhaDonatario.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        txtTelefoneDonatario.setForeground(new java.awt.Color(255, 255, 255));
+        txtTelefoneDonatario.setBorder(new javax.swing.border.MatteBorder(null));
+        txtTelefoneDonatario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtTelefoneDonatario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtTelefoneDonatario.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        txtCpfDonatario.setForeground(new java.awt.Color(255, 255, 255));
+        txtCpfDonatario.setBorder(new javax.swing.border.MatteBorder(null));
+        txtCpfDonatario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtCpfDonatario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtCpfDonatario.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        txtRuaDonatario.setForeground(new java.awt.Color(255, 255, 255));
+        txtRuaDonatario.setBorder(new javax.swing.border.MatteBorder(null));
+        txtRuaDonatario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtRuaDonatario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtRuaDonatario.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        txtBairroDonatario.setForeground(new java.awt.Color(255, 255, 255));
+        txtBairroDonatario.setBorder(new javax.swing.border.MatteBorder(null));
+        txtBairroDonatario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtBairroDonatario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtBairroDonatario.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        txtNumeroDonatario.setForeground(new java.awt.Color(255, 255, 255));
+        txtNumeroDonatario.setBorder(new javax.swing.border.MatteBorder(null));
+        txtNumeroDonatario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtNumeroDonatario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtNumeroDonatario.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        txtCepDonatario.setForeground(new java.awt.Color(255, 255, 255));
+        txtCepDonatario.setBorder(new javax.swing.border.MatteBorder(null));
+        txtCepDonatario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtCepDonatario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtCepDonatario.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        txtCidadeDonatario.setForeground(new java.awt.Color(255, 255, 255));
+        txtCidadeDonatario.setBorder(new javax.swing.border.MatteBorder(null));
+        txtCidadeDonatario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtCidadeDonatario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtCidadeDonatario.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        txtPerfilDonatario.setForeground(new java.awt.Color(255, 255, 255));
+        txtPerfilDonatario.setBorder(new javax.swing.border.MatteBorder(null));
+        txtPerfilDonatario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtPerfilDonatario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtPerfilDonatario.setSelectionColor(new java.awt.Color(255, 255, 255));
+
+        txtNomeDonatario.setBackground(new java.awt.Color(235, 235, 235));
+        txtNomeDonatario.setBorder(null);
+
         javax.swing.GroupLayout panelRadius1Layout = new javax.swing.GroupLayout(panelRadius1);
         panelRadius1.setLayout(panelRadius1Layout);
         panelRadius1Layout.setHorizontalGroup(
             panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRadius1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblRemoverUsuario)
+                .addGap(383, 383, 383))
             .addGroup(panelRadius1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRadius1Layout.createSequentialGroup()
+                        .addGroup(panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNomeDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelRadius1Layout.createSequentialGroup()
+                                .addComponent(lblNomeDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtIdDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtEmailDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSenhaDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTelefoneDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCpfDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtRuaDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtBairroDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNumeroDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCepDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCidadeDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPerfilDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelRadius1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(19, Short.MAX_VALUE))
@@ -131,10 +253,6 @@ public class AdminDonatario extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblClose2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17))))
-            .addGroup(panelRadius1Layout.createSequentialGroup()
-                .addGap(380, 380, 380)
-                .addComponent(lblCadastrar)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelRadius1Layout.setVerticalGroup(
             panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,11 +266,27 @@ public class AdminDonatario extends javax.swing.JPanel {
                     .addGroup(panelRadius1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(lblClose2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(lblCadastrar)
-                .addGap(29, 29, 29))
+                .addGroup(panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNomeDonatario)
+                    .addComponent(txtIdDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmailDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSenhaDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelefoneDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCpfDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRuaDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBairroDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNumeroDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCepDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCidadeDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPerfilDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(2, 2, 2)
+                .addComponent(txtNomeDonatario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(lblRemoverUsuario)
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -184,11 +318,10 @@ public class AdminDonatario extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastrarMouseClicked
-        new AdminCadastroDonatario().setVisible(true);
-
-
-    }//GEN-LAST:event_lblCadastrarMouseClicked
+    private void lblRemoverUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRemoverUsuarioMouseClicked
+       // new AdminCadastroDonatario().setVisible(true);
+       deletar();
+    }//GEN-LAST:event_lblRemoverUsuarioMouseClicked
 
     private void lblClose2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblClose2MouseClicked
         //Botao fechar
@@ -199,6 +332,10 @@ public class AdminDonatario extends javax.swing.JPanel {
         pesquisarDonatario();
     }//GEN-LAST:event_txtPesquisaKeyReleased
 
+    private void tableDonatarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDonatarioMouseClicked
+        setarCampos();
+    }//GEN-LAST:event_tableDonatarioMouseClicked
+
     //Método para listar os dados do banco na tabela
     public void carregarTabela() {
         connection = MySQL.conector();
@@ -206,21 +343,41 @@ public class AdminDonatario extends javax.swing.JPanel {
         DefaultTableModel modelo = (DefaultTableModel) tableDonatario.getModel();
         modelo.setNumRows(0);
 
-        tableDonatario.getColumnModel().getColumn(0).setPreferredWidth(80);
+        tableDonatario.getColumnModel().getColumn(0).setPreferredWidth(20);
         tableDonatario.getColumnModel().getColumn(1).setPreferredWidth(20);
-        tableDonatario.getColumnModel().getColumn(2).setPreferredWidth(10);
+        tableDonatario.getColumnModel().getColumn(2).setPreferredWidth(1);
+        tableDonatario.getColumnModel().getColumn(3).setPreferredWidth(1);
+        tableDonatario.getColumnModel().getColumn(4).setPreferredWidth(1);
+        tableDonatario.getColumnModel().getColumn(5).setPreferredWidth(1);
+        tableDonatario.getColumnModel().getColumn(6).setPreferredWidth(1);
+        tableDonatario.getColumnModel().getColumn(7).setPreferredWidth(1);
+        tableDonatario.getColumnModel().getColumn(8).setPreferredWidth(1);
+        tableDonatario.getColumnModel().getColumn(9).setPreferredWidth(1);
+        tableDonatario.getColumnModel().getColumn(10).setPreferredWidth(1);
+        tableDonatario.getColumnModel().getColumn(11).setPreferredWidth(1);
+      
 
         try {
 
-            pst = connection.prepareStatement("select nome,cpf from tblUsuario where perfil='donatario';");
+            pst = connection.prepareStatement("select * from tblUsuario where perfil='donatario';");
             rs = pst.executeQuery();
 
             while (rs.next()) {
                 modelo.addRow(new Object[]{
                     //Começa no dois por que nao quero trazer o campo idItem do mySql
                     rs.getString(1),
-                    rs.getString(2)
-                // rs.getString(3)
+                    rs.getString(2),
+                    rs.getString(3),
+                    rs.getString(4),
+                    rs.getString(5),
+                    rs.getString(6),
+                    rs.getString(7),
+                    rs.getString(8),
+                    rs.getString(9),
+                    rs.getString(10),
+                    rs.getString(11),
+                    rs.getString(12)
+                
 
                 });
             }
@@ -233,7 +390,7 @@ public class AdminDonatario extends javax.swing.JPanel {
 
         //método para pesquisa avançada no banco com filtro
     private void pesquisarDonatario() {
-        String sql = "SELECT nome as 'Nome do donatario',cpf as 'CPF' FROM tblUsuario WHERE nome LIKE ? AND perfil = 'donatario';";
+        String sql = "SELECT * FROM tblUsuario WHERE nome LIKE ? AND perfil = 'donatario';";
         try {
             pst = connection.prepareStatement(sql);
             //Passando o conteudo da caixa de pesquisa para o ?
@@ -248,15 +405,85 @@ public class AdminDonatario extends javax.swing.JPanel {
         }
     }
     
+    // Método para preencher os campos do formulário com o conteúdo da tabela
+public void setarCampos() {
+    int setar = tableDonatario.getSelectedRow();
+    
+    txtIdDonatario.setText(getValueFromTable(setar, 0));
+    txtNomeDonatario.setText(getValueFromTable(setar, 1));
+    txtEmailDonatario.setText(getValueFromTable(setar, 2));
+    txtSenhaDonatario.setText(getValueFromTable(setar, 3));
+    txtTelefoneDonatario.setText(getValueFromTable(setar, 4));
+    txtCpfDonatario.setText(getValueFromTable(setar, 5));
+    txtRuaDonatario.setText(getValueFromTable(setar, 6));
+    txtBairroDonatario.setText(getValueFromTable(setar, 7));
+    txtNumeroDonatario.setText(getValueFromTable(setar, 8));
+    txtCepDonatario.setText(getValueFromTable(setar, 9));
+    txtCidadeDonatario.setText(getValueFromTable(setar, 10));
+    txtPerfilDonatario.setText(getValueFromTable(setar, 11));
+}
+
+// Método auxiliar para obter o valor da tabela, tratando valores nulos
+private String getValueFromTable(int row, int column) {
+    Object value = tableDonatario.getModel().getValueAt(row, column);
+    return (value != null) ? value.toString() : "";
+}
+
+  //Metodo para deletar 
+    private void deletar(){
+        int confirma = JOptionPane.showConfirmDialog(null, "Deseja remover este donatario?","Atenção", JOptionPane.YES_NO_OPTION);
+        if (confirma == JOptionPane.YES_OPTION) {
+           
+            String sql = "delete from tblUsuario where idUsuario=?";
+            try {
+                pst = connection.prepareStatement(sql);
+              
+                pst.setString(1, txtIdDonatario.getText());
+                int apagado = pst.executeUpdate();
+                if(apagado > 0 ){
+                    JOptionPane.showMessageDialog(null,"Doanatário removido com sucesso");
+                    txtIdDonatario.setText(null);
+                    txtNomeDonatario.setText(null);
+                    txtEmailDonatario.setText(null);
+                    txtSenhaDonatario.setText(null);
+                    txtTelefoneDonatario.setText(null);
+                    txtCpfDonatario.setText(null);
+                    txtRuaDonatario.setText(null);
+                    txtBairroDonatario.setText(null);
+                    txtNumeroDonatario.setText(null);
+                    txtCepDonatario.setText(null);
+                    txtCidadeDonatario.setText(null);
+                    txtPerfilDonatario.setText(null);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+            
+        } else {
+        }
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblCadastrar;
     private javax.swing.JLabel lblClose2;
+    private javax.swing.JLabel lblNomeDonatario;
+    private javax.swing.JLabel lblRemoverUsuario;
     private com.mycompany.projeto.PanelCustom.PanelRadius panelRadius1;
     private javax.swing.JTable tableDonatario;
+    private javax.swing.JTextField txtBairroDonatario;
+    private javax.swing.JTextField txtCepDonatario;
+    private javax.swing.JTextField txtCidadeDonatario;
+    private javax.swing.JTextField txtCpfDonatario;
+    private javax.swing.JTextField txtEmailDonatario;
+    private javax.swing.JTextField txtIdDonatario;
+    private javax.swing.JTextField txtNomeDonatario;
+    private javax.swing.JTextField txtNumeroDonatario;
+    private javax.swing.JTextField txtPerfilDonatario;
     private javax.swing.JTextField txtPesquisa;
+    private javax.swing.JTextField txtRuaDonatario;
+    private javax.swing.JTextField txtSenhaDonatario;
+    private javax.swing.JTextField txtTelefoneDonatario;
     // End of variables declaration//GEN-END:variables
 }
