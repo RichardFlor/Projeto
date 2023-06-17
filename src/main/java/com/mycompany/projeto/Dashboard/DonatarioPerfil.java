@@ -179,11 +179,21 @@ public class DonatarioPerfil extends javax.swing.JPanel {
         panelRadius1.setRoundTopLeft(40);
         panelRadius1.setRoundTopRight(40);
 
-        txtPerfilUsuario.setBackground(new java.awt.Color(235, 235, 235));
+        txtPerfilUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtPerfilUsuario.setBorder(null);
+        txtPerfilUsuario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtPerfilUsuario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtPerfilUsuario.setEnabled(false);
+        txtPerfilUsuario.setFocusable(false);
+        txtPerfilUsuario.setSelectionColor(new java.awt.Color(255, 255, 255));
 
-        txtIdUsuario.setBackground(new java.awt.Color(235, 235, 235));
+        txtIdUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtIdUsuario.setBorder(null);
+        txtIdUsuario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtIdUsuario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtIdUsuario.setEnabled(false);
+        txtIdUsuario.setFocusable(false);
+        txtIdUsuario.setSelectionColor(new java.awt.Color(255, 255, 255));
 
         lblNomeProduto.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         lblNomeProduto.setForeground(new java.awt.Color(25, 118, 211));

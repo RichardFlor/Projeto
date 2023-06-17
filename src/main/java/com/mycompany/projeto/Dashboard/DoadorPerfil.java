@@ -247,8 +247,13 @@ public class DoadorPerfil extends javax.swing.JPanel {
         lblNomeProduto5.setForeground(new java.awt.Color(25, 118, 211));
         lblNomeProduto5.setText("Preencha seus dados para completar seu cadastro.");
 
-        txtIdUsuario.setBackground(new java.awt.Color(235, 235, 235));
+        txtIdUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtIdUsuario.setBorder(null);
+        txtIdUsuario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtIdUsuario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtIdUsuario.setEnabled(false);
+        txtIdUsuario.setFocusable(false);
+        txtIdUsuario.setSelectionColor(new java.awt.Color(255, 255, 255));
 
         lblRuaUsuario.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         lblRuaUsuario.setForeground(new java.awt.Color(25, 118, 211));
@@ -282,8 +287,13 @@ public class DoadorPerfil extends javax.swing.JPanel {
         lblCepUsuario.setForeground(new java.awt.Color(25, 118, 211));
         lblCepUsuario.setText("CEP:");
 
-        txtPerfilUsuario.setBackground(new java.awt.Color(235, 235, 235));
+        txtPerfilUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtPerfilUsuario.setBorder(null);
+        txtPerfilUsuario.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtPerfilUsuario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtPerfilUsuario.setEnabled(false);
+        txtPerfilUsuario.setFocusable(false);
+        txtPerfilUsuario.setSelectionColor(new java.awt.Color(255, 255, 255));
 
         txtTelefoneUsuario.setBackground(new java.awt.Color(235, 235, 235));
         txtTelefoneUsuario.setBorder(null);
@@ -374,13 +384,13 @@ public class DoadorPerfil extends javax.swing.JPanel {
                                 .addGap(25, 25, 25)
                                 .addComponent(lblNomeProduto5))
                             .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                         .addComponent(lblNomeUsuario)
                         .addGap(2, 2, 2))
                     .addGroup(panelRadius1Layout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addComponent(txtPerfilUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)))
                 .addGroup(panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelRadius1Layout.createSequentialGroup()
                         .addGroup(panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -405,7 +415,6 @@ public class DoadorPerfil extends javax.swing.JPanel {
                             .addGroup(panelRadius1Layout.createSequentialGroup()
                                 .addComponent(lblCpfUsuario)
                                 .addGap(32, 32, 32)))
-                        .addGap(18, 18, 18)
                         .addComponent(lblRuaUsuario)
                         .addGap(2, 2, 2)
                         .addComponent(txtRuaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -427,7 +436,7 @@ public class DoadorPerfil extends javax.swing.JPanel {
                                 .addGroup(panelRadius1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtCidadeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtCepUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                         .addComponent(lblAtualizar)
                         .addGap(29, 29, 29))
                     .addGroup(panelRadius1Layout.createSequentialGroup()

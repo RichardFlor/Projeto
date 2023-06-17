@@ -205,14 +205,14 @@
                                   </Group>
                                   <Component id="txtIdUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="27" max="32767" attributes="0"/>
+                              <EmptySpace pref="36" max="32767" attributes="0"/>
                               <Component id="lblNomeUsuario" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                               <Component id="txtPerfilUsuario" min="-2" pref="25" max="-2" attributes="0"/>
-                              <EmptySpace pref="9" max="32767" attributes="0"/>
+                              <EmptySpace pref="18" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -246,7 +246,6 @@
                                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="lblRuaUsuario" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
                               <Component id="txtRuaUsuario" min="-2" pref="30" max="-2" attributes="0"/>
@@ -275,7 +274,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="68" max="32767" attributes="0"/>
                               <Component id="lblAtualizar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           </Group>
@@ -434,11 +433,22 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtIdUsuario">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="eb" red="eb" type="rgb"/>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
+                </Property>
+                <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="selectionColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -554,11 +564,22 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtPerfilUsuario">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="eb" red="eb" type="rgb"/>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
+                </Property>
+                <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="selectionColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
               </Properties>
               <AuxValues>
