@@ -10,12 +10,11 @@
 //select * from tblItemCesta;
 //select * from tblItemUsuario;
 //
-//UPDATE tblUsuario SET telefone = "888888888" WHERE idUsuario = 4;
 ///* Criando as tabelas */
 //CREATE TABLE tblUsuario (
 //    idUsuario int primary key auto_increment,
 //    nome varchar(255),
-//    email varchar(255),
+//    email varchar(255) unique,
 //    senha varchar(255),
 //    telefone varchar(15),
 //    cpf varchar(15),
@@ -51,86 +50,72 @@
 //	add column idUsuario int,
 //    add constraint FK_Usuario_Cesta
 //		foreign key (idUsuario)
-//		references tblUsuario(idUsuario);
+//		references tblUsuario(idUsuario) ON DELETE CASCADE ON UPDATE CASCADE;
 //
 //alter table tblItemCesta
 //	add column idCesta int,
 //    add constraint FK_Cesta_ItemCesta
 //		foreign key (idCesta)
-//		references tblCesta(idCesta);
+//		references tblCesta(idCesta)ON DELETE CASCADE ON UPDATE CASCADE;
 //        
 //alter table tblItemCesta
 //	add column idItem int,
 //    add constraint FK_Item_ItemCesta
 //		foreign key (idItem)
-//		references tblItem(idItem);
+//		references tblItem(idItem)ON DELETE CASCADE ON UPDATE CASCADE;
 //
 //alter table tblItemUsuario
 //	add column idUsuario int,
 //    add constraint FK_Usuario_tblItemUsuario
 //		foreign key (idUsuario)
-//		references tblUsuario(idUsuario);
+//		references tblUsuario(idUsuario)ON DELETE CASCADE ON UPDATE CASCADE;
 //        
 //alter table tblItemUsuario
 //	add column idItem int,
 //    add constraint FK_Item_tblItemUsuario
 //		foreign key (idItem)
-//		references tblItem(idItem);
+//		references tblItem(idItem)ON DELETE CASCADE ON UPDATE CASCADE;
 //
 //
 ///* Inserindo dados com email para logar */
 //insert into tblUsuario (Nome,Email,Senha,Perfil) values ('Richard','admin@admin','123','admin');
-//insert into tblUsuario (Nome,Email,Senha,Perfil,Telefone) values ('Richard','doador@doador','123','doador','999999999');
-//insert into tblUsuario (Nome,Email,Senha,cpf,Perfil) values ('Gustavo','donatario@donatario','123','00000000000','donatario');
+//insert into tblUsuario (nome, email, senha, telefone, cpf, rua, bairro, numero, cep, cidade, perfil) values ('Doador Silva', 'doador@doador', '123', '(11)98765-4321', '123.456.789-00', 'Rua A', 'Bairro X', '123', '12345-678', 'São Paulo', 'doador');
+//insert into tblUsuario (nome, email, senha, telefone, cpf, rua, bairro, numero, cep, cidade, perfil) values ('Donatario Silva','donatario@donatario','123','(11)98765-4321', '123.456.789-00', 'Rua A', 'Bairro X', '123', '12345-678', 'São Paulo','donatario');
 //
 //-- Insert para doador
-//INSERT INTO tblUsuario (Nome, Senha, Telefone, Perfil)
+//  INSERT INTO tblUsuario (nome, email, senha, telefone, cpf, rua, bairro, numero, cep, cidade, perfil)
 //VALUES
-//  ('Matheus', '123', '111111111', 'doador'),
-//  ('Lucas', '123', '222222222', 'doador'),
-//  ('Pedro', '123', '333333333', 'doador'),
-//  ('Gabriel', '123', '444444444', 'doador'),
-//  ('Mariana', '123', '555555555', 'doador'),
-//  ('Julia', '123', '666666666', 'doador'),
-//  ('Rafael', '123', '777777777', 'doador'),
-//  ('Larissa', '123', '888888888', 'doador'),
-//  ('Gustavo', '123', '999999999', 'doador'),
-//  ('Isabela', '123', '101010101', 'doador'),
-//  ('Daniel', '123', '121212121', 'doador'),
-//  ('Manuela', '123', '131313131', 'doador'),
-//  ('Ricardo', '123', '141414141', 'doador'),
-//  ('Fernanda', '123', '151515151', 'doador'),
-//  ('Caio', '123', '161616161', 'doador'),
-//  ('Carolina', '123', '171717171', 'doador'),
-//  ('Vitor', '123', '181818181', 'doador'),
-//  ('Amanda', '123', '191919191', 'doador'),
-//  ('Marcelo', '123', '202020202', 'doador'),
-//  ('Renata', '123', '212121212', 'doador');
+//    ('João Silva', 'joao.silva@example.com', 'senha123', '(11)98765-4321', '123.456.789-00', 'Rua A', 'Bairro X', '123', '12345-678', 'São Paulo', 'doador'),
+//    ('Maria Santos', 'maria.santos@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','doador'),
+//    ('Sophia', 'sohpia.santos@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','doador'),
+//    ('Gabriel Santos', 'gabriel.santos@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','doador'),
+//    ('Isabella Santos', 'isabella.santos@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','doador'),
+//    ('Lucas Santos', 'lucas.santos@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','doador'),
+//    ('Valentina Santos', 'valentina.santos@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','doador'),
+//    ('Matheus Santos', 'matheus.santos@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','doador'),
+//    ('Helena Santos', 'helena.santos@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','doador'),
+//    ('Rafael Santos', 'rafaela.santos@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','doador'),
+//    ('Laura Santos', 'laura.santos@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','doador'),
+//    ('Felipe Santos', 'felipe.santos@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','doador'),
+//    ('Pedro Almeida', 'pedro.almeida@example.com', 'senha789', '(33)77777-6666', '111.222.333-44', 'Rua C', 'Bairro Z', '789', '54321-987', 'Belo Horizonte','doador');
 //
 //
 //-- Insert para donatario
-//INSERT INTO tblUsuario (Nome, cpf, Perfil)
+//  INSERT INTO tblUsuario (nome, email, senha, telefone, cpf, rua, bairro, numero, cep, cidade, perfil)
 //VALUES
-//  ('Gustavo', '11111111111', 'donatario'),
-//  ('Mariana', '22222222222', 'donatario'),
-//  ('Lucas', '33333333333', 'donatario'),
-//  ('Isabela', '44444444444', 'donatario'),
-//  ('Pedro', '55555555555', 'donatario'),
-//  ('Ana', '66666666666', 'donatario'),
-//  ('Rafaela', '77777777777', 'donatario'),
-//  ('Leonardo', '88888888888', 'donatario'),
-//  ('Carolina', '99999999999', 'donatario'),
-//  ('Matheus', '10101010101', 'donatario'),
-//  ('Amanda', '12121212121', 'donatario'),
-//  ('Gabriel', '13131313131', 'donatario'),
-//  ('Larissa', '14141414141', 'donatario'),
-//  ('Bruno', '15151515151', 'donatario'),
-//  ('Juliana', '16161616161', 'donatario'),
-//  ('Ricardo', '17171717171', 'donatario'),
-//  ('Natália', '18181818181', 'donatario'),
-//  ('Marcelo', '19191919191', 'donatario'),
-//  ('Letícia', '20202020202', 'donatario'),
-//  ('Vitor', '21212121212', 'donatario');
+//    ('João Silva', 'joao@example.com', 'senha123', '(11) 98765-4321', '123.456.789-00', 'Rua A', 'Bairro X', '123', '12345-678', 'São Paulo', 'donatario'),
+//    ('Maria Santos', 'maria.silva@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','donatario'),
+//    ('Sophia', 'sophia.silva@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','donatario'),
+//    ('Gabriel Santos', 'gabriiel.silva@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','donatario'),
+//    ('Isabella Santos', 'isabella.silva@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','donatario'),
+//    ('Lucas Santos', 'lucas.silva@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','donatario'),
+//    ('Valentina Santos', 'valentina.silva@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','donatario'),
+//    ('Matheus Santos', 'matheus.silva@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','donatario'),
+//    ('Helena Santos', 'helena.silva@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','donatario'),
+//    ('Rafael Santos', 'rafael.silva@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','donatario'),
+//    ('Laura Santos', 'laura.silva@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','donatario'),
+//    ('Felipe Santos', 'felipe.silva@example.com', 'senha456', '(22)99999-8888', '987.654.321-00', 'Rua B', 'Bairro Y', '456', '98765-432', 'Rio de Janeiro','donatario'),
+//    ('Pedro Almeida', 'pedro.silva@example.com', 'senha789', '(33)77777-6666', '111.222.333-44', 'Rua C', 'Bairro Z', '789', '54321-987', 'Belo Horizonte','donatario');
 //
 //INSERT INTO tblItem (nomeItem, validade)
 //VALUES
@@ -155,10 +140,10 @@
 //  ('Leite em caixa', '25/11/2023'),
 //  ('Chá', '12/02/2024');
 //
+// DELETE FROM tblCesta WHERE idUsuario =27;
 //
 //
-//
-//insert into tblCesta(qntItens) values (1);
+//insert into tblCesta(qntItens, idUsuario) values (2,27);
 //insert into tblCesta(qntItens) values (2);
 //insert into tblCesta(qntItens) values (3);
 //insert into tblCesta(qntItens) values (4);
@@ -173,7 +158,7 @@
 //insert into tblItemUsuario(idUsuario,idItem) values(4,3);
 //insert into tblItemUsuario(idUsuario,idItem) values(4,4);
 //
-//-- UPDATE tblItem SET validade = '2023-02-19' WHERE idItem = 4;
+//-- UPDATE tblUsuario SET nome = 'Tanjiro San' WHERE idUsuario = 2;
 //
 //
 //
