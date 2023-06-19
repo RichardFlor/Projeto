@@ -133,7 +133,7 @@ public class AdminDonatario extends javax.swing.JPanel {
 
         lblNomeDonatario.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         lblNomeDonatario.setForeground(new java.awt.Color(25, 118, 211));
-        lblNomeDonatario.setText("Doanatario selecionado:");
+        lblNomeDonatario.setText("Doanatário selecionado:");
 
         txtIdDonatario.setForeground(new java.awt.Color(255, 255, 255));
         txtIdDonatario.setBorder(new javax.swing.border.MatteBorder(null));

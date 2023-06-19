@@ -166,7 +166,7 @@ public class AdminCesta extends javax.swing.JPanel {
         });
 
         txtIdCesta.setForeground(new java.awt.Color(255, 255, 255));
-        txtIdCesta.setBorder(new javax.swing.border.MatteBorder(null));
+        txtIdCesta.setBorder(null);
         txtIdCesta.setCaretColor(new java.awt.Color(255, 255, 255));
         txtIdCesta.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         txtIdCesta.setSelectionColor(new java.awt.Color(255, 255, 255));
@@ -217,7 +217,7 @@ public class AdminCesta extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)

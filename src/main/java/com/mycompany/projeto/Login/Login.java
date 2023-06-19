@@ -74,7 +74,7 @@ public class Login extends javax.swing.JFrame {
                         break;
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "usuário e/ou senha inválido(s)");
+                JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválido(s)");
                 Login login = new Login();
                 login.setVisible(true);
             }
@@ -95,7 +95,6 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblCreatBy = new javax.swing.JLabel();
         lblBackgroundIcon = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblClose = new javax.swing.JLabel();
@@ -131,14 +130,8 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblCreatBy.setFont(new java.awt.Font("Sitka Small", 1, 13)); // NOI18N
-        lblCreatBy.setForeground(new java.awt.Color(25, 118, 211));
-        lblCreatBy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCreatBy.setText("Seeds");
-        jPanel1.add(lblCreatBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 500, -1));
-
-        lblBackgroundIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\background.png")); // NOI18N
-        jPanel1.add(lblBackgroundIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 500, 340));
+        lblBackgroundIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\seeds.png")); // NOI18N
+        jPanel1.add(lblBackgroundIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 420, 340));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 440));
 
@@ -166,7 +159,7 @@ public class Login extends javax.swing.JFrame {
         lblSubTitle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lblSubTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblSubTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblSubTitle.setText("Hello! Let's get started");
+        lblSubTitle.setText("Olá! vamos começar?");
         jPanel2.add(lblSubTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 94, 420, -1));
 
         lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
@@ -195,7 +188,7 @@ public class Login extends javax.swing.JFrame {
 
         lblPassword.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lblPassword.setForeground(new java.awt.Color(199, 226, 255));
-        lblPassword.setText("Password");
+        lblPassword.setText("Senha");
         jPanel2.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 192, 341, -1));
 
         txtPasswordLogin.setBackground(new java.awt.Color(25, 118, 211));
@@ -232,13 +225,13 @@ public class Login extends javax.swing.JFrame {
         chkRemember.setBackground(new java.awt.Color(25, 118, 211));
         chkRemember.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         chkRemember.setForeground(new java.awt.Color(199, 226, 255));
-        chkRemember.setText("Remember Password");
+        chkRemember.setText("Lembrar senha");
         jPanel2.add(chkRemember, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 261, -1, -1));
 
         lblForgetPass.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lblForgetPass.setForeground(new java.awt.Color(199, 226, 255));
         lblForgetPass.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblForgetPass.setText("Forget Password?");
+        lblForgetPass.setText("Esqueceu a senha?");
         lblForgetPass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(lblForgetPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 261, 121, 27));
 
@@ -255,7 +248,7 @@ public class Login extends javax.swing.JFrame {
 
         btnSingUp.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnSingUp.setForeground(new java.awt.Color(255, 255, 255));
-        btnSingUp.setText("Sign Up");
+        btnSingUp.setText("Cadastrar-se");
         btnSingUp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSingUp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -267,7 +260,7 @@ public class Login extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(199, 226, 255));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel14.setText("Don't have an account?");
+        jLabel14.setText("Não possui uma conta?");
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 357, 213, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 420, 440));
@@ -380,7 +373,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblBackgroundIcon;
     private javax.swing.JLabel lblClose;
-    private javax.swing.JLabel lblCreatBy;
     private javax.swing.JLabel lblDisableIcon;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblForgetPass;

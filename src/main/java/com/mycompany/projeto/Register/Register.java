@@ -67,7 +67,6 @@ public class Register extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblCreateBy = new javax.swing.JLabel();
         lblBackgroundIcon = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblClose = new javax.swing.JLabel();
@@ -105,14 +104,8 @@ public class Register extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblCreateBy.setFont(new java.awt.Font("Sitka Small", 1, 13)); // NOI18N
-        lblCreateBy.setForeground(new java.awt.Color(25, 118, 211));
-        lblCreateBy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCreateBy.setText("Seeds");
-        jPanel1.add(lblCreateBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 500, -1));
-
-        lblBackgroundIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\background.png")); // NOI18N
-        jPanel1.add(lblBackgroundIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 35, 500, 340));
+        lblBackgroundIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\seeds.png")); // NOI18N
+        jPanel1.add(lblBackgroundIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 430, 340));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 440));
 
@@ -169,7 +162,7 @@ public class Register extends javax.swing.JFrame {
 
         lblPassword.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lblPassword.setForeground(new java.awt.Color(199, 226, 255));
-        lblPassword.setText("Password *");
+        lblPassword.setText("Senha *");
         jPanel2.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 341, -1));
 
         txtPasswordRegister.setBackground(new java.awt.Color(25, 118, 211));
@@ -225,7 +218,7 @@ public class Register extends javax.swing.JFrame {
 
         lblUsername.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(199, 226, 255));
-        lblUsername.setText("Name *");
+        lblUsername.setText("Nome *");
         jPanel2.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 341, -1));
 
         txtUsernameRegister.setBackground(new java.awt.Color(25, 118, 211));
@@ -392,7 +385,6 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblBackgroundIcon;
     private javax.swing.JLabel lblClose;
-    private javax.swing.JLabel lblCreateBy;
     private javax.swing.JLabel lblDisableIcon;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblFooter;
