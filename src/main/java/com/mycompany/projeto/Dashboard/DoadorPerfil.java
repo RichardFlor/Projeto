@@ -251,7 +251,6 @@ public class DoadorPerfil extends javax.swing.JPanel {
         txtIdUsuario.setBorder(null);
         txtIdUsuario.setCaretColor(new java.awt.Color(255, 255, 255));
         txtIdUsuario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        txtIdUsuario.setEnabled(false);
         txtIdUsuario.setFocusable(false);
         txtIdUsuario.setSelectionColor(new java.awt.Color(255, 255, 255));
 
@@ -291,7 +290,6 @@ public class DoadorPerfil extends javax.swing.JPanel {
         txtPerfilUsuario.setBorder(null);
         txtPerfilUsuario.setCaretColor(new java.awt.Color(255, 255, 255));
         txtPerfilUsuario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        txtPerfilUsuario.setEnabled(false);
         txtPerfilUsuario.setFocusable(false);
         txtPerfilUsuario.setSelectionColor(new java.awt.Color(255, 255, 255));
 
