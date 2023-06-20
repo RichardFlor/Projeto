@@ -79,8 +79,8 @@
 //
 ///* Inserindo dados com email para logar */
 //insert into tblUsuario (Nome,Email,Senha,Perfil) values ('Richard','admin@admin','123','admin');
-//insert into tblUsuario (nome, email, senha, telefone, cpf, rua, bairro, numero, cep, cidade, perfil) values ('Doador Silva', 'doador@doador', '123', '(11)98765-4321', '123.456.789-00', 'Rua A', 'Bairro X', '123', '12345-678', 'São Paulo', 'doador');
-//insert into tblUsuario (nome, email, senha, telefone, cpf, rua, bairro, numero, cep, cidade, perfil) values ('Donatario Silva','donatario@donatario','123','(11)98765-4321', '123.456.789-00', 'Rua A', 'Bairro X', '123', '12345-678', 'São Paulo','donatario');
+//insert into tblUsuario (nome, email, senha, telefone, cpf, rua, bairro, numero, cep, cidade, perfil) values ('Leonardo', 'doador@doador', '123', '(11)98765-4321', '123.456.789-00', 'Rua A', 'Bairro X', '123', '12345-678', 'São Paulo', 'doador');
+//insert into tblUsuario (nome, email, senha, telefone, cpf, rua, bairro, numero, cep, cidade, perfil) values ('Matheus','donatario@donatario','123','(11)98765-4321', '123.456.789-00', 'Rua A', 'Bairro X', '123', '12345-678', 'São Paulo','donatario');
 //
 //-- Insert para doador
 //  INSERT INTO tblUsuario (nome, email, senha, telefone, cpf, rua, bairro, numero, cep, cidade, perfil)
@@ -139,36 +139,4 @@
 //  ('Leite condensado', '08/09/2023'),
 //  ('Leite em caixa', '25/11/2023'),
 //  ('Chá', '12/02/2024');
-//
-// DELETE FROM tblCesta WHERE idUsuario =27;
-//
-//
-//insert into tblCesta(qntItens, idUsuario) values (2,27);
-//insert into tblCesta(qntItens) values (2);
-//insert into tblCesta(qntItens) values (3);
-//insert into tblCesta(qntItens) values (4);
-//
-//insert into tblItemCesta(idCesta,idItem) values(1,1);
-//insert into tblItemCesta(idCesta,idItem) values(2,2);
-//insert into tblItemCesta(idCesta,idItem) values(3,3);
-//insert into tblItemCesta(idCesta,idItem) values(4,4);
-//
-//insert into tblItemUsuario(idUsuario,idItem) values(2,1);
-//insert into tblItemUsuario(idUsuario,idItem) values(2,2);
-//insert into tblItemUsuario(idUsuario,idItem) values(4,3);
-//insert into tblItemUsuario(idUsuario,idItem) values(4,4);
-//
-//-- UPDATE tblUsuario SET nome = 'Tanjiro San' WHERE idUsuario = 2;
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
