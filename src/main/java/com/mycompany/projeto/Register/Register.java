@@ -104,7 +104,7 @@ public class Register extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblBackgroundIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\seeds.png")); // NOI18N
+        lblBackgroundIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Richard\\Desktop\\images\\seeds.png")); // NOI18N
         jPanel1.add(lblBackgroundIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 430, 340));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 440));
